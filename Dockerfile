@@ -5,7 +5,7 @@ COPY build.gradle .
 COPY settings.gradle .
 COPY BroadcastProductService BroadcastProductService
 RUN chmod +x ./gradlew
-RUN ./gradlew build
+#RUN ./gradlew build
 
 FROM openjdk:21-slim
 WORKDIR /usr/src/demo
