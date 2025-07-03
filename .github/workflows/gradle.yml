@@ -15,7 +15,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -55,6 +54,9 @@ jobs:
     - name: Docker Hub push
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/githubdemo
 
+  Deploy:
+    runs-on: ubuntu-latest
+    step:
     - name: Docker 이미지 풀
       run: docker pull rcsfrontier/githubdemo:latest
 
