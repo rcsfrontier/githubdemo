@@ -10,6 +10,6 @@ RUN ./gradlew build
 FROM openjdk:21-slim
 WORKDIR /usr/src/demo
 RUN groupadd  -r spring && useradd  -g spring spring
-USER spring:spring
 COPY --from=builder /BroadcastProductService/build/libs/*.jar app.jar
+USER spring:spring
 ENTRYPOINT ["java","-jar","app.jar"]
