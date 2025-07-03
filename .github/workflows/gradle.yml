@@ -54,3 +54,9 @@ jobs:
     # Docker hub 로 push
     - name: Docker Hub push
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/githubdemo
+
+    - name: Docker 이미지 풀
+      run: docker pull rcsfrontier/githubdemo:latest
+
+    - name: 컨테이너 실행
+      run: docker run -d -p 8080:80 rcsfrontier/githubdemo:latest
