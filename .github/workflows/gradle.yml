@@ -56,7 +56,7 @@ jobs:
 
   Deploy:
     runs-on: ubuntu-latest
-    step:
+    steps:
     - name: Docker 이미지 풀
       run: docker pull rcsfrontier/githubdemo:latest
 
